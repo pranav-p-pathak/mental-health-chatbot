@@ -1,39 +1,39 @@
 // src/utils/supabaseClient.ts
 import { createClient } from '@supabase/supabase-js';
 
-// Initialize Supabase client
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-// Validate environment variables
 if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error(`
-    Missing Supabase environment variables!
-    Please check your .env file and make sure:
-    VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY are set
+    ❌ Missing Supabase environment variables!
+    Make sure VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY are set in your .env file
   `);
 }
 
-// Create and export the Supabase client
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-  auth: {
-    // Automatically refreshes the token when expired
-    autoRefreshToken: true,
-    // Persists the session in local storage
-    persistSession: true,
-    // Detects when the session is expired
-    detectSessionInUrl: true
-  }
-});
+// Prevent multiple instances in development (Vite HMR)
+const _supabase =
+  (globalThis as any).supabase ??
+  createClient(supabaseUrl, supabaseAnonKey, {
+    auth: {
+      autoRefreshToken: true,
+      persistSession: true,
+      detectSessionInUrl: false // set to true only if using magic links or OAuth redirects
+    }
+  });
 
-// Helper function to get the current session
+if (import.meta.env.DEV) (globalThis as any).supabase = _supabase;
+
+export const supabase = _supabase;
+
+// Helper: get current session
 export const getCurrentSession = async () => {
   const { data: { session }, error } = await supabase.auth.getSession();
   if (error) throw error;
   return session;
 };
 
-// Helper function to get the current user
+// Helper: get current user
 export const getCurrentUser = async () => {
   const { data: { user }, error } = await supabase.auth.getUser();
   if (error) throw error;
