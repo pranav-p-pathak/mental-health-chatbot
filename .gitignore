@@ -1,0 +1,69 @@
+# ======================
+# Global Ignores
+# ======================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.log
+*.local
+*.zip
+*.tsbuildinfo
+
+# ======================
+# Environment
+# ======================
+.env
+.env.*
+!.env.example
+
+# ======================
+# Dependency Directories
+# ======================
+**/node_modules/
+**/package-lock.json
+**/.bolt/
+**/.supabase/
+
+# ======================
+# Build Outputs
+# ======================
+**/dist/
+**/dist-ssr/
+client.zip
+
+# ======================
+# Logs
+# ======================
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ======================
+# IDE/Editor
+# ======================
+.idea/
+.vscode/
+!.vscode/extensions.json
+*.code-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ======================
+# Supabase
+# ======================
+/supabase/.env
+/supabase/config.toml
+/supabase/.temp/
+!supabase/migrations/
+
+# ======================
+# TypeScript/Vite
+# ======================
+tsconfig.tsbuildinfo
