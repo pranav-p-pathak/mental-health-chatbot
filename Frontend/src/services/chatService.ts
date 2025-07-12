@@ -1,7 +1,7 @@
 import { ChatRequest, ChatResponse, ApiError, PersonaType } from '../types/ApiTypes';
 import { supabase } from '../utils/supabaseClient';
 
-const API_URL = import.meta.env.VITE_BACKEND_API_URL || 'http://localhost:3000/chat';
+const API_URL = import.meta.env.VITE_BACKEND_API_URL || 'https://mental-health-chatbot-backend-efzj.onrender.com';
 
 const fallbackResponse = "I'm sorry, I'm having trouble connecting right now. Please try again in a moment, or if this continues, consider reaching out to a mental health professional.";
 
