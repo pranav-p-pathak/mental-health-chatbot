@@ -1,45 +1,45 @@
-# Mental Health Chat App 🧠💬
+# 🧠💬 Mental Health Chat App  
 
-A web-based anonymous chat app with built-in sentiment analysis and empathetic responses, designed to support users' mental well-being.
+A web-based anonymous chat app offering empathetic AI responses, real-time sentiment analysis, and mood tracking—designed to support users' mental well-being.
 
----
+## 🚀 Features  
+- ✅ Anonymous chat with empathetic AI  
+- ✅ Real-time sentiment analysis (positive/negative/neutral/crisis)  
+- ✅ Persona selection:  
+  - Calm Therapist  
+  - Supportive Friend  
+  - Motivational Coach  
+- 🔄 Gemini + Groq LLM fallback for reliability  
+- 📈 Mood trend visualization (*coming soon*)  
 
-## 🚀 Features
+## 🖥️ Tech Stack  
+**Frontend**:  
+Vite + React + TypeScript + Tailwind CSS  
 
-- Anonymous chat with empathetic AI
-- Sentiment analysis: positive, negative, neutral, or crisis
-- Mood trend visualization (coming soon!)
-- Persona options: calm therapist, supportive friend, motivational coach
-- Gemini + Groq LLM fallback for reliable responses
+**Backend**:  
+Node.js + Express  
 
----
+**AI APIs**:  
+Google Gemini + Groq (LLaMA)  
 
-## 🖥️ Tech Stack
+**Database**:  
+Supabase (PostgreSQL)  
 
-- **Frontend:** Vite + React + TypeScript + Tailwind CSS  
-- **Backend:** Node.js + Express  
-- **AI APIs:** Gemini (Google) + Groq (LLaMA)  
-- **Database:** Supabase (PostgreSQL)  
-- **Hosting:** [Add hosting info]
+**Hosting**:  
+[Add hosting platform info here]  
 
----
-
-## 📦 Installation
+## 📦 Installation  
 
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 npm install
-Create a .env file with your API keys:
+
 GEMINI_KEY=your_gemini_key
 GROQ_KEY=your_groq_key
 
-Then run:
 npm run dev   # or npm start
-📄 API Structure
-POST /chat
-Request:
 
-json
+API:
 {
   "message": "I'm feeling low today.",
   "timestamp": "2025-07-04T12:00:00Z",
@@ -52,23 +52,23 @@ json
     }
   ]
 }
-Response:
 
-json
+Response:
 {
   "response": "I'm here for you. Would you like to share more about what's troubling you?",
   "sentiment": "negative",
   "timestamp": "2025-07-04T12:00:01Z"
 }
+
 📌 TODO
- Add Gemini fallback to Groq
+Add Gemini fallback to Groq
 
- Markdown formatting for bot replies
+Markdown formatting for bot replies
 
- Add mood graph
+Add mood graph visualization
 
- User authentication (optional)
+Optional user authentication
 
 🤝 Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
-
+Pull requests are welcome!
+For major changes, please open an issue first to discuss your ideas.
