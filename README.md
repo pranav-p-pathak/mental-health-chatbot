@@ -30,16 +30,38 @@ Supabase (PostgreSQL)
 
 ## 📦 Installation  
 
+```clone
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 npm install
+```
 
+## 🚀 Getting Started
+
+### 🛠️ Environment Variables
+
+Make sure to set the following in your `.env` file:
+
+```env
 GEMINI_KEY=your_gemini_key
 GROQ_KEY=your_groq_key
+```
 
-npm run dev   # or npm start
+---
 
-API:
+### ▶️ Run the App
+
+```bash
+npm run dev  # or npm start
+```
+
+---
+
+## 📡 API Usage
+
+### 📨 API Request Example
+
+```json
 {
   "message": "I'm feeling low today.",
   "timestamp": "2025-07-04T12:00:00Z",
@@ -52,13 +74,28 @@ API:
     }
   ]
 }
+```
 
-Response:
+### 📬 API Response Example
+
+```json
 {
   "response": "I'm here for you. Would you like to share more about what's troubling you?",
   "sentiment": "negative",
   "timestamp": "2025-07-04T12:00:01Z"
 }
+```
+
+---
+
+## 🌟 Features
+
+- 💬 Anonymous chatting
+- ❤️ Empathetic AI responses
+- 📈 Mood trend analysis
+- 🧘 Multiple personas like calm-therapist
+
+---
 
 📌 TODO
 Add Gemini fallback to Groq
